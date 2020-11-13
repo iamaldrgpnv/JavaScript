@@ -16,8 +16,8 @@ console.log(`n: ${n}`);
 console.log(`Сумма цифр двузначного числа n: ${sum}`);
 //
 console.log("Задание 3")
-let num_1 = 16;
-let num_2 = 100;
+let num_1 = 100;
+let num_2 = 99;
 let changed_num_1 = (num_2 - num_1) + num_1;
 let changed_num_2 = (num_1 - num_2) + num_2;
 console.log(num_1)
