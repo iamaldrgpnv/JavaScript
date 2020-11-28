@@ -95,14 +95,12 @@ console.log(`Среднее арифметическое значение: ${sum
 console.log(" ")
 // Задача 2
 console.log("Задача №2");
-arr = [1, 6, 9, 4, 3, 0], sum = 0;
+arr = [3.5, 6, 9, 4, 1, 3];
 console.log(arr);
 for (let i1 = 0; i1 < arr.length; i1++) {
 	for (let i2 = 0; i2 < arr.length; i2++) {
-		sum = arr[i1] + arr[i2];
-		if (sum === 7) {
-			console.log(`Пара чисел ${arr[i1]} (Индекс: ${i1}), ${arr[i2]} (Индекс: ${i2})`);
-		}
+		if ( arr[i1] === arr[i2]) continue;
+		if ( arr[i1] + arr[i2] === 7) console.log(`Пара чисел ${arr[i1]} (Индекс: ${i1}), ${arr[i2]} (Индекс: ${i2})`);
 	}
 }
 console.log(" ");
