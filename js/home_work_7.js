@@ -29,11 +29,11 @@ let goods = {
 
 console.log("Задача №1")
 let getGoodsByPrice = (from, to, obj) => {
-	let newObject = { goodsInRange: "" };
+	let newObject = {};
 	if (typeof (from) === "number" && typeof (to) === "number") {
 		for (let element in obj) { // element выводит строку, поэтому используем квадратные скобки (2 вариант)
 			if (from < obj[element].price && obj[element].price < to) {
-				newObject.goodsInRange += element + " ";
+				newObject[element] = obj[element];
 			}
 		}
 	} else { console.log("Введено не число") }
@@ -44,20 +44,17 @@ console.log("")
 //
 console.log("Задача №2")
 function getByTitle(title, countToCart, obj) {
-	let sum = 0;
 	for (let element in obj) {
 		if (obj[element].title.toLowerCase() === title.toLowerCase()) {
 			console.log("Товар был найден")
-			sum++;
 			if (obj[element].count >= countToCart) {
-				console.log("Данное количество товара в наличии на складе")
 				obj[element].count -= countToCart;
-			} else {
-				console.log("К сожалению, данного количества товара нет в наличии на складе")
-			}
+				return console.log("Данное количество товара в наличии на складе")
+			} 
+			return console.log("К сожалению, данного количества товара нет в наличии на складе")
 		}
 	}
-	if (sum === 0) console.log("Товар не был найден")
+	console.log("Товар не был найден")
 }
 getByTitle("АрФа", 5, goods)
 console.log("")
