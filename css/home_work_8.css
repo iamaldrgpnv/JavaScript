@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	box-sizing: border-box;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+.card {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+}
+.title {
+	display: flex;
+
+}
+.info {
+	display: flex;
+}
+.cat {
+	flex: 1;
+	width: 100px;
+	height: 150px;
+}
+.description {
+	flex: 1;
+}
+table, td {
+	border: 1px solid black;
+}
