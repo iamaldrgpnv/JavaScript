@@ -36,9 +36,9 @@ function generateCard(cards) {
 	let cats = getCats();
 	for (let cat in cats) {
 		let card = document.createElement("div");
-		card.classList.add("card")
+		card.classList.add("card");
 		let title = document.createElement("div");
-		title.classList.add("title")
+		title.classList.add("title");
 		let name = document.createElement("div");
 		name.classList.add("name");
 		name.innerHTML = cats[cat].name + ",";
@@ -49,7 +49,7 @@ function generateCard(cards) {
 		let info = document.createElement("div");
 		info.classList.add("info")
 		let img = document.createElement("img");
-		img.classList.add("cat")
+		img.classList.add("cat");
 		img.setAttribute("src", cats[cat].img)
 		let description = document.createElement("div");
 		description.classList.add("description")
@@ -59,16 +59,18 @@ function generateCard(cards) {
 		let color = document.createElement("div");
 		color.classList.add("color");
 		color.innerHTML = `Цвет: ${cats[cat].color}`;
-		let doc = document.createElement("div");
-		doc.classList.add("doc");
-		doc.innerHTML = `Паспорт: ${cats[cat].additional_info.passport}`;
+		let passport = document.createElement("div");
+		passport.classList.add("doc");
+		let pas = cats[cat].additional_info.passport === true ? "Да" : "Нет";
+		passport.innerHTML = `Паспорт: ${pas}`;
 		let vaccinations = document.createElement("div");
 		vaccinations.classList.add("vaccinations");
-		vaccinations.innerHTML = `Вакцинация: ${cats[cat].additional_info.vaccinations}`;
-		description.append(text, color, doc, vaccinations);
-		info.append(img, description)
+		let vac = cats[cat].additional_info.vaccinations === true ? "Да" : "Нет";
+		vaccinations.innerHTML = `Вакцинация: ${vac}`;
+		description.append(text, color, passport, vaccinations);
+		info.append(img, description);
 		card.append(title, info);
-		console.log(card)
+		console.log(card);
 		cards.append(card);
 	}
 }
@@ -128,8 +130,8 @@ let goods = [
 	}
 ];
 function createTable(arr) {
-	let table = document.createElement("table")
-	let section = document.querySelector(".generateTable")
+	let table = document.createElement("table");
+	let section = document.querySelector(".generateTable");
 	let row1;
 	for (let obj of arr) {
 		row1 = table.insertRow(0);
@@ -141,7 +143,7 @@ function createTable(arr) {
 			cel2.innerHTML = obj[key];
 		}
 	}
-	for (let i = 0; i < arr.length - 1; i++) table.deleteRow(0)
+	for (let i = 0; i < arr.length - 1; i++) table.deleteRow(0);
 	section.append(table);
 }
 createTable(articles);
