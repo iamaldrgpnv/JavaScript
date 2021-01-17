@@ -1,5 +1,10 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+section {
+	display: flex;
 }
 .game-field {
 	display: flex;
@@ -7,6 +12,13 @@
 	flex-wrap: wrap;
 	width: 40vw;
 	background: chocolate;
+	flex: 1;
+}
+.info {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
 .present {
 	font-size: 10px;
